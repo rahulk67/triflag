@@ -23,9 +23,9 @@ const mysql = require('mysql2/promise');
 
 const connection = mysql.createPool({
         host: '127.0.0.1',
-        user: 'myuser',
-        password: 'mypassword',
-        database: 'myapp_db',
+        user: 'root',
+        password: 'Lokesh@123',
+        database: 'gamedb',
         port: 3306
     });
     
