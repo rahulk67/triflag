@@ -112,13 +112,15 @@ const register = async (req, res) => {
    let code = randomString(5) + randomNumber(10000, 99999)
    let ip = ipAddress(req)
    let time = timeCreate()
-   console.log("hi");
+   console.log("hivbnmn");
 
    if(!invitecode){
       invitecode = "vpIgg59711";
    }
  
-   if (!username || !pwd ||!otp) {
+   // if (!username || !pwd ||!otp) {
+   if (!username || !pwd) {
+
       console.log(username, pwd)
       return res.status(200).json({
          message: "ERROR!!!",
@@ -135,6 +137,7 @@ const register = async (req, res) => {
 
    try {
       const [check_u] = await connection.query("SELECT * FROM users WHERE phone = ?", [username])
+
       const [check_i] = await connection.query("SELECT * FROM users WHERE code = ? ", [invitecode])
       //   const [check_ip] = await connection.query("SELECT * FROM users WHERE ip_address = ? ", [ip])
 
@@ -144,12 +147,13 @@ const register = async (req, res) => {
             status: false,
          })
       } else {
-         if(check_u[0].otp !== otp || check_u[0].time_otp - now <= 0){
-            return res.status(200).json({
-               message: "Invalid OTP",
-               status: false,
-            })
-         }
+         // if(check_u[0].otp !== otp || check_u[0].time_otp - now <= 0){
+         //    return res.status(200).json({
+         //       message: "Invalid OTP",
+         //       status: false,
+         //    })
+         // }
+         let otp = "0000"
          if (check_i.length == 1) {
             // if (check_ip.length <= 3) {
             let ctv = ""

@@ -33,9 +33,10 @@
 
 </div>
 
-<div data-v-57d49070="" data-v-23d378a6="" class="passwordInput__container"><div data-v-57d49070="" class="passwordInput__container-label"><img data-v-57d49070="" class="passwordInput__container-label__icon" data-origin="https://www.bigdaddygame2.com/assets/png/password-b827c2b3.png" src="/images/pin.png"><span data-v-57d49070="">OTP</span></div><div data-v-57d49070="" class="passwordInput__container-input">
+<div data-v-57d49070="" data-v-23d378a6="" class="passwordInput__container">
+    <div data-v-57d49070="" style="display: none;" class="passwordInput__container-label"><img data-v-57d49070="" class="passwordInput__container-label__icon" data-origin="https://www.bigdaddygame2.com/assets/png/password-b827c2b3.png" src="/images/pin.png"><span data-v-57d49070="">OTP</span></div><div data-v-57d49070="" class="passwordInput__container-input">
 
-    <input data-v-57d49070="" name="password" id="otp" type="number" placeholder="Please Enter OTP" maxlength="32" autocomplete="new-password" required>
+    <input style="display: none;" data-v-57d49070="" name="password" id="otp" type="number" placeholder="Please Enter OTP" maxlength="32" autocomplete="new-password">
 
     <button style="background: #1ec41e;
     padding: 10px;
@@ -43,9 +44,12 @@
     font-size: 13px;
     font-weight: bold;
     border: none;
-    border-radius: 5px;cursor: pointer;" class="otp" >Send OTP</button>
+    border-radius: 5px;cursor: pointer;
+    display: none;" class="otp" >Send OTP</button>
     
-    </div></div>
+    </div>
+
+</div>
 
 <div data-v-57d49070="" data-v-23d378a6="" class="passwordInput__container"><div data-v-57d49070="" class="passwordInput__container-label"><img data-v-57d49070="" class="passwordInput__container-label__icon" data-origin="https://www.bigdaddygame2.com/assets/png/password-b827c2b3.png" src="./index_files/password-b827c2b3.png"><span data-v-57d49070="">Set password</span></div><div data-v-57d49070="" class="passwordInput__container-input">
 
@@ -250,9 +254,9 @@
                                 $('.Loading').fadeOut(10);
                                 alertMess(response.message);
                             }, 100);
-                            setTimeout(() => {
-                                location.href = '/login';
-                            }, 900);
+                            // setTimeout(() => {
+                            //     location.href = '/login';
+                            // }, 900);
                         } else {
                             $('.van-overlay').fadeOut(300);
                             alertMess(response.message);
