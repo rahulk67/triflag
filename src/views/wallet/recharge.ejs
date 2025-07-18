@@ -167,9 +167,9 @@
 
                         <!-- Quick Money Amount Options -->
                         <div id="quick_money_options" data-v-67caa467="" class="list m-t-10 c-row c-row-between c-flex-warp">
-                           <div data-v-67caa467="" data-money="100" class="li action">
+                           <!-- <div data-v-67caa467="" data-money="100" class="li action">
                               <span data-v-67caa467="" class="number">100</span>
-                           </div>
+                           </div> -->
                            <div data-v-67caa467="" data-money="300" class="li">
                               <span data-v-67caa467="" class="number">300</span>
                            </div>
@@ -243,10 +243,12 @@
             USDT: "usdt",
          }
 
+         // <div data-v-67caa467="" data-money="100" class="li action">
+         //        <span data-v-67caa467="" class="number">100</span>
+         //    </div>
+
          const QuickMoneyForRegular = `
-         <div data-v-67caa467="" data-money="100" class="li action">
-                <span data-v-67caa467="" class="number">100</span>
-            </div>
+        
             <div data-v-67caa467="" data-money="300" class="li">
                 <span data-v-67caa467="" class="number">300</span>
             </div>
@@ -361,28 +363,28 @@
                   QuickMoneyOptions.innerHTML = QuickMoneyForRegular
                   break
                case PaymentMethodsMap.MANUAL_PAY:
-                  inputMoney = "100"
-                  MoneyAmountInput.value = "100"
+                  inputMoney = "300"
+                  MoneyAmountInput.value = "300"
                   selectedPaymentMethod = PaymentMethodsMap.MANUAL_PAY
                   QuickMoneyOptions.innerHTML = QuickMoneyForRegular
                   break
                case PaymentMethodsMap.USDT_MANUAL:
-                  inputMoney = "4"
-                  MoneyAmountInput.value = "4"
+                  inputMoney = "300"
+                  MoneyAmountInput.value = "300"
                   selectedPaymentMethod = PaymentMethodsMap.USDT_MANUAL
                   QuickMoneyOptions.innerHTML = QuickMoneyForUSDT
                   inr.innerHTML = '$'
                   inr_input.innerHTML = '$'
                   break
                case PaymentMethodsMap.USDT:
-                  inputMoney = "4"
-                  MoneyAmountInput.value = "4"
+                  inputMoney = "300"
+                  MoneyAmountInput.value = "300"
                   selectedPaymentMethod = PaymentMethodsMap.USDT
                   QuickMoneyOptions.innerHTML = QuickMoneyForUSDT
                   break
                default:
-                  inputMoney = "100"
-                  MoneyAmountInput.value = "100"
+                  inputMoney = "300"
+                  MoneyAmountInput.value = "300"
                   selectedPaymentMethod = PaymentMethodsMap.UPI_GATEWAY
                   QuickMoneyOptions.innerHTML = QuickMoneyForRegular
                   break
@@ -432,6 +434,7 @@
 
          const handleDepositFund = event => {
             const minimumMoneyAllowed = parseInt(`<%=MinimumMoney%>`)
+            console.log("Minimum Money Allowed: ", minimumMoneyAllowed)
 
             if (!inputMoney || !(inputMoney >= minimumMoneyAllowed)) {
                alertMessage(`Money is Required and it should be ₹${minimumMoneyAllowed} or above!`)

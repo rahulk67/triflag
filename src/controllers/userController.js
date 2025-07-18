@@ -1129,7 +1129,7 @@ const withdrawal3 = async (req, res) => {
    let auth = req.cookies.auth
    let money = req.body.money
    let password = req.body.password
-   if (!auth || !money || !password || money < 110) {
+   if (!auth || !money || !password || money < 3000) {
       return res.status(200).json({
          message: "Failed",
          status: false,
