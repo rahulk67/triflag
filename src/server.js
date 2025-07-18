@@ -1,4 +1,8 @@
-require('dotenv/config')
+const path = require("path");
+require('dotenv').config({
+  path: path.resolve(__dirname, '../.env'), // ✅ Load .env from root
+  override: true                             // ✅ Ensures it overrides any shell env vars
+});
 
 const express = require('express');
 const configViewEngine = require('./config/configEngine');
@@ -9,13 +13,14 @@ const aviatorController = require('./controllers/aviatorController');
 
 
 let cookieParser = require('cookie-parser');
-require('dotenv').config({path:'../.env'});
+// require('dotenv').config({path:'../.env'});
 
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-const port = 7777;
+const port = process.env.PORT || 7777;
+
 
 app.use(cookieParser());
 // app.use(express.static('public'));

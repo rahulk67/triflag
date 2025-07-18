@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const md5= require("md5");
 const request= require('request');
 const e= require("express");
-require('dotenv').config();
+
 
 let timeNow = Date.now();
 

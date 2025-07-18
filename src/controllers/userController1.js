@@ -2,7 +2,7 @@ const connection= require("../config/connectDB");
 const jwt = require('jsonwebtoken')
 const md5= require("md5");
 const request = require('request');
-require('dotenv').config();
+
 
 let timeNow = Date.now();
 

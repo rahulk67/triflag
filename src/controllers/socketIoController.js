@@ -1,5 +1,5 @@
 const connection = require("../config/connectDB");
-require('dotenv').config();
+
 
 const sendMessageAdmin = (io) => {
     io.on('connection', (socket) => {

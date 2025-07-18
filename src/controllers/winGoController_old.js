@@ -2,7 +2,7 @@ const connection= require("../config/connectDB");
 // import jwt from 'jsonwebtoken'
 // import md5 from "md5";
 // import e from "express";
-require('dotenv').config();
+
 
 
 const winGoPage = async (req, res) => {

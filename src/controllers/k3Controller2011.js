@@ -1,5 +1,5 @@
 const connection = require("../config/connectDB");
-require('dotenv').config();
+
 
 const K3Page = async (req, res) => {
     return res.render("bet/k3/k3.ejs");
